@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primer Juego</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Hanalei+Fill&display=swap" rel="stylesheet">
+
+
+    
+</head>
+<body>
+    
+    <div class="container text-center py-5">
+        
+            <h1>SquareAnimals</h1>  
+        
+    </div>
+    <div class="container-fluid">
+        <canvas id="lienzo" width="770" height="490"></canvas>
+        
+        <div class="row">
+            <div class="col-sm-12 py-2">
+                <h2>Resuelve el siguiente patron</h2>
+                
+                    <button class="button type3">
+                        Comprobar
+                    </button>
+                
+            </div>
+
+        </div>
+
+        <!----
+        <div class="container text-center">
+            <h2> Resuelve el siguiente patron</h2>
+            <div class="buttons">
+                <button class="button type3">
+                    Comprobar
+                </button>
+            </div>
+        </div>-->
+
+        <div class="imagen-patron">
+        <canvas id="patrones" width="770" height="490"></canvas>
+        </div>
+
+    </div>
+
+
+    
+ 
+    
+
+    <audio  id="background" src="sound/y2mate.com.mp3"></audio>
+    <audio  id="colision"  src="sound/FX/collision.wav"></audio>
+    <audio  id="movimiento"  src="sound/FX/movi1.wav"></audio>
+    
+    <script src="js/game.js"></script>
+</body>
+</html>
