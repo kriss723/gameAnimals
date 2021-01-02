@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Primer Juego</title>
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -14,36 +15,28 @@
 </head>
 <body>
     
-    <div class="container text-center py-5">
-        
-            <h1>SquareAnimals</h1>  
-        
-    </div>
-    <div class="container-fluid">
-        <canvas id="lienzo" width="770" height="490"></canvas>
-        
-        <div class="row">
-            <div class="col-sm-12 py-2">
-                <h2>Resuelve el siguiente patron</h2>
-                
-                    <button class="button type3">
-                        Comprobar
-                    </button>
-                
-            </div>
+    <div class="container-fluid py-5" style="font-family: 'Hanalei Fill', cursive;">
 
-        </div>
-
-        <!----
-        <div class="container text-center">
-            <h2> Resuelve el siguiente patron</h2>
-            <div class="buttons">
-                <button class="button type3">
-                    Comprobar
+            <div class="col-md-12 py-2" style="display: flex; margin-left: 20px;">
+                <h1>SquareAnimals</h1>  
+                <button id="music" class="button type3" style="margin-left: 300px;padding: 0;">
+                    music
                 </button>
             </div>
-        </div>-->
-
+        
+    </div>
+    <div class="container-fluid " style="padding: 0;">
+        <canvas id="lienzo" width="770" height="490"></canvas>
+        
+        <div class="row " style="font-family: 'Hanalei Fill', cursive;min-width: 770px;">
+            <div class="col-md-12 py-2  " style="display: flex; margin-left: 20px;">
+                <h2>Resuelve el siguiente patron</h2>
+                <button id="ComprobarPatron" class="button type3" style="margin-left: 180px;">
+                    Comprobar
+                </button>
+            </div>   
+        </div>
+        <hr>
         <div class="imagen-patron">
         <canvas id="patrones" width="770" height="490"></canvas>
         </div>
