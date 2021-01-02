@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     imagenCafe.src = "img/Cafe.png";
     imagenRojo.src = "img/Rojo.png";
     imagenVerde.src = "img/Verde.png";
-    imagenBlanco.src = "img/blanco.png";
+    imagenBlanco.src = "img/Blanco.png";
 
     var objetoActual = null;
     var objetoColision = null;
