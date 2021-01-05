@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Hanalei+Fill&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 
 
     
@@ -31,7 +32,7 @@
         <div class="row " style="font-family: 'Hanalei Fill', cursive;min-width: 770px;">
             <div class="col-md-12 py-2  " style="display: flex; margin-left: 20px;">
                 <h2>Resuelve el siguiente patron</h2>
-                <button id="ComprobarPatron" class="button type3" style="margin-left: 180px;">
+                <button id="comprobarPatron" class="button type3" style="margin-left: 180px;">
                     Comprobar
                 </button>
             </div>   
@@ -43,7 +44,27 @@
 
     </div>
 
+    <!--Popup mensaje de felicitacion-->
 
+    <div class="overlay" id="overlay">
+        <div class="popup" id="popup">
+            <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+            <h3>GANASTE</h3>
+            <h4>Ahora podras avanzar al siguiente nivel de aventura</h4>
+            <img src="img/Victoria.gif" alt="ganaste">
+            
+        </div>
+    </div>
+
+    <div class="overlay1" id="overlay1">
+        <div class="popup1" id="popup1">
+            <a href="#" id="btn-cerrar-popup1" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+            <h3>SIGUE INTENTANDO</h3>
+            <h4>podras avanzar al siguiente nivel de aventura</h4>
+            <img src="img/enemy.gif" alt="vuelve">
+            
+        </div>
+    </div>
     
  
     
@@ -52,6 +73,7 @@
     <audio  id="colision"  src="sound/FX/collision.wav"></audio>
     <audio  id="movimiento"  src="sound/FX/movi1.wav"></audio>
     
+   
     <script src="js/game.js"></script>
 </body>
 </html>
