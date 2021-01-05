@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     var indexColision = null;
     var bandera;
     var banderaY;
+    var nivel = false;
 
     //efectos
     var backMusic = document.getElementById('background');
@@ -124,6 +125,21 @@ document.addEventListener('DOMContentLoaded', () => {
         new squaretemplateGame({x:560, x2: 630, y: 70, y2: 140, w: 70, h:70, image: imagenBlanco}),
         new squaretemplateGame({x:560, x2: 630, y: 140, y2: 210, w: 70, h:70, image: imagenBlanco}),
         new squaretemplateGame({x:560, x2: 630, y: 210, y2: 280, w: 70, h:70, image: imagenBlanco})        
+        ];     
+
+    patron2 = [  
+        new squaretemplateGame({x:140, x2: 210, y: 70, y2: 140, w: 70, h:70, image: imagenRojo}),
+        new squaretemplateGame({x:140, x2: 210, y: 140, y2: 210, w: 70, h:70, image: imagenBlanco}),
+        new squaretemplateGame({x:140, x2: 210, y: 210, y2: 280, w: 70, h:70, image: imagenRojo}),
+        new squaretemplateGame({x:280, x2: 350, y: 70, y2: 140, w: 70, h: 70, image: imagenCafe}),
+        new squaretemplateGame({x:280, x2: 350, y: 140, y2: 210, w: 70, h: 70, image: imagenRojo}),
+        new squaretemplateGame({x:280, x2: 350, y: 210, y2: 280, w: 70, h: 70, image: imagenCafe}),
+        new squaretemplateGame({x:420, x2: 490, y: 70, y2: 140, w: 70, h:70, image: imagenBlanco}),
+        new squaretemplateGame({x:420, x2: 490, y: 140, y2: 210, w: 70, h:70, image: imagenVerde}),
+        new squaretemplateGame({x:420, x2: 490, y: 210, y2: 280, w: 70, h:70, image: imagenBlanco}),
+        new squaretemplateGame({x:560, x2: 630, y: 70, y2: 140, w: 70, h:70, image: imagenVerde}),
+        new squaretemplateGame({x:560, x2: 630, y: 140, y2: 210, w: 70, h:70, image: imagenCafe}),
+        new squaretemplateGame({x:560, x2: 630, y: 210, y2: 280, w: 70, h:70, image: imagenVerde})        
         ];     
 
     function launcher(){
@@ -245,6 +261,16 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         overlay.classList.remove('active');
         popup.classList.remove('active');
+
+        patrones.src = "img/patron2.jpg"
+        
+        canvasP.drawImage(patrones,0,0);
+
+        console.log(patron1);
+
+        patron1 = patron2;
+
+        console.log(patron1);
      
     });
 
@@ -252,6 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         overlay1.classList.remove('active');
         popup1.classList.remove('active');
+
     });
 
 
@@ -261,8 +288,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const rect = canvasB.canvas.getBoundingClientRect();
         var x = event.clientX - rect.left;
         var y = event.clientY - rect.top;
-        
-        
+         
         colision(x,y);
        
         animateInterval = setInterval(animate,6);
@@ -403,8 +429,6 @@ document.addEventListener('DOMContentLoaded', () => {
             
             //colisones con el entorno las columnas
             
-
-
             if((objetoActual.x >= 0  && objetoActual.x <= 70 )&& bandera == 0){
                 objetoActual.y = 350;
             }else if((objetoActual.x >= 70 && objetoActual.x <= 140) && bandera == 70){
@@ -419,32 +443,26 @@ document.addEventListener('DOMContentLoaded', () => {
             }else if (objetoActual.x > 700 && bandera == 700){
                 objetoActual.y = 350;
             }
-
             if ( objetoActual.y <= 350 && objetoActual.x > 210 && objetoActual.x < 280) {
                 objetoActual.y = 350;//limite inferior de la columna 1
             }
-
             if((objetoActual.x <= 280 && bandera == 280) && (objetoActual.y >= 0 && objetoActual.y <= 350)){
                 objetoActual.x = 280;//permanecer en columna 2 limite izquierdo
                 objetoActual.y = banderaY;
             }else if((x2 >= 350 && bandera == 280) && (objetoActual.y >= 0 && objetoActual.y <= 350)){
                 objetoActual.x = 280;//permanecer en columna 2 limite derecho
             }
-
             if ( objetoActual.y <= 350 && objetoActual.x > 280 && objetoActual.x < 420) {
                 objetoActual.y = 350;//limite inferior de la columna 2
             }
-
             if((objetoActual.x <= 420 && bandera == 420) && (objetoActual.y >= 0 && objetoActual.y <= 350)){
                 objetoActual.x = 420;//permanecer en columna 3 limite izquierdo
             }else if((x2 >= 490 && bandera == 420) && (objetoActual.y >= 0 && objetoActual.y <= 350)){
                 objetoActual.x = 420;//permanecer en columna 3 limite derecho
             }
-
             if ( objetoActual.y <= 350 && objetoActual.x > 420 && objetoActual.x < 560) {
                 objetoActual.y = 350;//limite inferior de la columna 3
             }
-
             if((objetoActual.x <= 560 && bandera == 560) && (objetoActual.y >= 0 && objetoActual.y <= 350)){
                 objetoActual.x = 560;//permanecer en columna 4 limite izquierdo
             }else if((x2 >= 630 && bandera == 560) && (objetoActual.y >= 0 && objetoActual.y <= 350)){
@@ -474,8 +492,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     objetoActual.x = 630;
                 }else if(objetoActual.x > 700){
                     objetoActual.x = 700;
+                    objetoActual.y = 350;
                 }else if(objetoActual.x < 0){
                     objetoActual.x = 0;
+                    objetoActual.y = 350;
                 }
 
 
@@ -614,4 +634,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     
 
-})
+});
