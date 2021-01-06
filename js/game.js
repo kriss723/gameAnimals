@@ -241,7 +241,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //funcion para activar la musica//
     botonMusic.addEventListener('click', function(){
+         if(backMusic.paused){
           backMusic.play();
+          let playBtn = document.querySelector('.play-btn');
+          playBtn.innerHTML = '<i class="fa fa-pause"></i>';
+        } else{
+          backMusic.pause();
+          playBtn = document.querySelector('.play-btn');
+          playBtn.innerHTML = '<i class="fa fa-play"></i>';
+        }
     })
 
     //funcion para comprobar los patrones///
