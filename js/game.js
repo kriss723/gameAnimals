@@ -34,6 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
     var botonMusic = document.getElementById('music');
     var colisionSound = document.getElementById('colision');
     var moviGame = document.getElementById('movimiento');
+    var winSound = document.getElementById('ganasteSound');
+    var trySound = document.getElementById('intentaSound');
 
     //Elementos Popup//////
     var btnAbrirPopup = document.getElementById('comprobarPatron'),
@@ -246,9 +248,11 @@ document.addEventListener('DOMContentLoaded', () => {
     btnAbrirPopup.addEventListener('click', function(){
 
         if(testPatrol()){
+	    winSound.play();	
             overlay.classList.add('active');
             popup.classList.add('active');
         }else{
+	    trySound.play();
             overlay1.classList.add('active');
             popup1.classList.add('active');
             console.log('intenta otra vez');
@@ -259,6 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     btnCerrarPopup.addEventListener('click', function(e){
         e.preventDefault();
+	winSound.play();    
         overlay.classList.remove('active');
         popup.classList.remove('active');
 
@@ -276,6 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     btnCerrarPopup1.addEventListener('click', function(e){
         e.preventDefault();
+	trySound.play();
         overlay1.classList.remove('active');
         popup1.classList.remove('active');
 
