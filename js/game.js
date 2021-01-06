@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     var moviGame = document.getElementById('movimiento');
     var winSound = document.getElementById('ganasteSound');
     var trySound = document.getElementById('intentaSound');
+    var cerrarPopup = document.getElementById('cerrarPopUp');	
 
     //Elementos Popup//////
     var btnAbrirPopup = document.getElementById('comprobarPatron'),
@@ -263,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     btnCerrarPopup.addEventListener('click', function(e){
         e.preventDefault();
-	winSound.play();    
+	cerrarPopup.play();    
         overlay.classList.remove('active');
         popup.classList.remove('active');
 
@@ -281,7 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     btnCerrarPopup1.addEventListener('click', function(e){
         e.preventDefault();
-	trySound.play();
+	cerrarPopup.play();
         overlay1.classList.remove('active');
         popup1.classList.remove('active');
 
